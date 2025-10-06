@@ -1,5 +1,6 @@
 const { Router } = require("express");
-const DashboardController = require('./DashboardController');
+const umum = require("./umum");
+//const UmumController = require('./umum/UmumController');
 
 module.exports = () => {
     const app = Router();
@@ -11,7 +12,7 @@ module.exports = () => {
         }
         res.render('login', data);
     });
-    app.get('/admin', DashboardController.index);
+    app.use("/umum", umum());
 
     return app;
 };

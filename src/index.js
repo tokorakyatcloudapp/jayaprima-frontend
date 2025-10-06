@@ -1,7 +1,6 @@
 const express = require('express');
 const { engine } = require('express-handlebars');
 const path = require('path');
-const api = require('./controller_api');
 const test = require('./controller_test');
 const view = require('./controller_views');
 
@@ -53,7 +52,6 @@ app.use((req, res, next) => {
 
 // API Routes
 app.use('/', view());
-app.use('/api', api());
 app.use('/test', test());
 
 // Error handling middleware
