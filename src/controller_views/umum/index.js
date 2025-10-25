@@ -6,7 +6,7 @@ module.exports = () => {
     // Additional example routes
     app.get('/dashboard', require('./dashboard')());
     app.get('/profil_usaha', require('./profil_usaha')());
-    //app.get('/profil_akun', require('./profil_akun')());
+    app.get('/profil_akun', require('./profil_akun')());
 
     return app;
 }
