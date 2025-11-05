@@ -6,9 +6,10 @@ const test = require('./controller_test');
 const views = require('./controller_views');
 const pagenotfoundErrorHandler = require('./middlewares/pagenotfoundErrorHandler');
 const unexpectedErrorHandler = require('./middlewares/unexpectedErrorHandler');
+const config = require('config');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || config.VIEW_PORT;
 
 // Handlebars configuration
 app.engine('hbs', engine({
@@ -38,24 +39,24 @@ app.set('views', './views');
 app.set('test', path.join(__dirname, '../views'));
 
 // Static files (if needed)
-app.use(express.static(path.join(__dirname, '../public')));
+// app.use(express.static(path.join(__dirname, '../public')));
+app.use(express.static('public'))
 
 // API Routes
 app.use('/', views());
 app.use('/test', test());
 
-// Error handling middleware
-app.use(unexpectedErrorHandler()); // handle 500 error handler
-app.use(pagenotfoundErrorHandler()); // handle 404 error handler
+// 404 handler - must be placed after all routes but before error handlers
+app.use(pagenotfoundErrorHandler());
 
-// 404 handler
-// app.use('/{*any}', pagenotfoundErrorHandler());
+// Error handling middleware - must be last
+app.use(unexpectedErrorHandler()); // handle 500 error handler
 
 // Start server
 app.listen(PORT, () => {
     console.log(`🚀 Server is running on port ${PORT}`);
-    console.log(`🔗 View base URL: http://localhost:${PORT}`);
-    console.log(`📍 Test check: http://localhost:${PORT}/test`);
+    console.log(`🔗 View base URL: ${config.VIEW_HOST}${PORT}`);
+    console.log(`📍 Test check: ${config.VIEW_HOST}${PORT}/test`);
 });
 
 module.exports = app;

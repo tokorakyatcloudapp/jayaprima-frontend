@@ -1,17 +1,16 @@
 const config = require('config');
 
 module.exports = () => {
-    return (error, req, res, next) => {
-        const { status, message, stack } = error;
-
+    return (req, res, next) => {
         const data = {
             layout: "",
-            title: 'Login',
+            title: 'Page Not Found - 404',
             api_host: config.API_HOST,
             message: 'Page Not Found Error :(',
-            stack: config.MODE == 'development' ? stack : undefined
+            url: req.originalUrl,
+            method: req.method
         };
 
-        res.status(status || 404).render('error_404', data);
+        res.status(404).render('error_404', data);
     };
 };

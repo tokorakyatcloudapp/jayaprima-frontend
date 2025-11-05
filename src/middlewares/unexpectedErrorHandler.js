@@ -11,6 +11,6 @@ module.exports = () => {
             message: 'Server Unexpected Error :(',
             stack: config.MODE == 'development' ? stack : undefined
         };
-        res.status(status || 500).render('error_500', data);
+        res.status(500).render('error_500', data);
     };
 };

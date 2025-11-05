@@ -1,7 +1,8 @@
 module.exports = () => {
     return async (req, res, next) => {
         const data = {
-            title: 'Profil Akun'
+            title: 'Profil Akun',
+            layout:'admin'
         };
         try {
             res.render('page_umum/profil_akun', data);

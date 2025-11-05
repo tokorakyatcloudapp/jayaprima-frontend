@@ -1,23 +1,30 @@
+const { Router } = require('express');
 const axios = require('axios');
 const config = require("config");
 
 module.exports = () => {
-    return async (req, res, next) => {
+    const router = Router();
+
+    // Handle GET request to root path for login page
+    router.get('/', async (req, res) => {
         const data = {
             layout: "",
-            title: 'Login',
-            api_host: config.API_HOST,
+            title: 'Login'
         };
-        
-        axios.get(data.api_host + '/api/info')
-            .then(function (response) {
-                data.data = response.data;
-                res.render('login', data);
-            }).catch(function (e) {
-                const { status, message, stack } = e;
-                data.message = 'Server Unexpected Error :(';
-                data.stack = config.MODE == 'development' ? stack : undefined
-                res.status(404).render('error_404', data);
-            })
-    }
-}
+
+        try {
+            const response = await axios.get(data.api_host + '/api/info');
+            data.logo = config.API_HOST + response.data.logo;
+            data.name = response.data.name;
+            res.render('login', data);
+        } catch (e) {
+            data.message = 'Server Unexpected Error :(';
+            data.stack = config.MODE == 'development' ? e.stack : undefined;
+            data.logo = config.VIEW_HOST +":"+ config.VIEW_PORT+"/images/logo.png";
+            data.name = "Toko Rakyat";
+            res.render('login', data);
+        }
+    });
+
+    return router;
+};
