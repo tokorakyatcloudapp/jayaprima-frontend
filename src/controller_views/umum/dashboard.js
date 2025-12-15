@@ -1,7 +1,8 @@
 module.exports = () => {
     return async (req, res, next) => {
         const data = {
-            title: 'Dashboard'
+            title: 'Dashboard',
+            layout:'admin'
         };
         try {
             res.render('page_umum/dashboard', data);

@@ -53,7 +53,17 @@
             <!-- /top navigation -->
 
             <!-- page content -->
-            {{{body}}}
+            <div class="right_col" role="main" style="min-height: 3778.67px;">
+                <div class="">
+                    <div class="page-title">
+                        <div class="title_left nav-header">
+
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    {{{body}}}
+                </div>
+            </div>
             <!-- /page content -->
 
             <!-- footer content -->
@@ -69,6 +79,26 @@
     <!-- Custom Theme Scripts -->
     <script src="/build/js/custom.min.js"></script>
     {{{_sections.script}}}
+    <script>
+        $(document).ready(function () {
+            var newDiv = $("<h3></h3>");
+            $.each(window.location.pathname.split("/"), function (index, value) {
+                if (value.length > 0) {
+                    newDiv.append(toCamelCase(value))
+                    if (index < window.location.pathname.split("/").length - 1) {
+                        newDiv.append(' <span class="glyphicon glyphicon-menu-right" style="font-size: smaller;Wmargin-right: 5px;"></span>');
+                    }
+                }
+            });
+            $('.nav-header').append(newDiv);
+        });
+
+        function toCamelCase(str) {
+            return str.split('_').map(function (word, index) {
+                return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+            }).join(' ');
+        }
+    </script>
 </body>
 
 </html>

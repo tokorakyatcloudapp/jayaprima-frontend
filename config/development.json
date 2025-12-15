@@ -1,6 +1,6 @@
 {
     "MODE": "development",
     "API_HOST": "https://lapak.indesc.com",
-    "VIEW_HOST": "https://localhost",
+    "VIEW_HOST": "http://localhost",
     "VIEW_PORT": "3000"
 }

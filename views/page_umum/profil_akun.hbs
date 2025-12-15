@@ -1,295 +1,328 @@
-<div class="right_col" role="main" style="min-height: 3778.67px;">
-    <div class="">
-        <div class="page-title">
-            <div class="title_left">
-                <h3>Users <small>Some examples to get you started</small></h3>
+{{#section 'style'}}
+<script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
+<link rel="stylesheet" href="https://cdn.datatables.net/2.3.5/css/dataTables.dataTables.css" />
+{{/section}}
+
+
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h2>Data Akun</h2>
+                <ul class="nav navbar-right panel_toolbox">
+                    <li><button class="btn btn-success btn-sm btn-tambah-akun"><i class="fa fa-plus"></i> Tambah
+                            Akun</button></li>
+                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
             </div>
-
-            <div class="title_right">
-                <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search for...">
-                        <span class="input-group-btn">
-                            <button class="btn btn-default" type="button">Go!</button>
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="clearfix"></div>
-
-        <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12">
-                <div class="x_panel">
-                    <div class="x_title">
-                        <h2>Data Akun <small>Users</small></h2>
-                        <ul class="nav navbar-right panel_toolbox">
-                            <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                            </li>
-                        </ul>
-                        <div class="clearfix"></div>
-                    </div>
-                    <div class="x_content">
-                        <p class="text-muted font-13 m-b-30">
-                            DataTables has most features enabled by default, so all you need to do to use it with your
-                            own tables is to call the construction function: <code>$().DataTable();</code>
-                        </p>
-                        <div id="datatable_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <div class="dataTables_length" id="datatable_length"><label>Show <select
-                                                name="datatable_length" aria-controls="datatable"
-                                                class="form-control input-sm">
-                                                <option value="10">10</option>
-                                                <option value="25">25</option>
-                                                <option value="50">50</option>
-                                                <option value="100">100</option>
-                                            </select> entries</label></div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div id="datatable_filter" class="dataTables_filter"><label>Search:<input
-                                                type="search" class="form-control input-sm" placeholder=""
-                                                aria-controls="datatable"></label></div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <table id="datatable" class="table table-striped table-bordered dataTable no-footer"
-                                        role="grid" aria-describedby="datatable_info">
-                                        <thead>
-                                            <tr role="row">
-                                                <th class="sorting_asc" tabindex="0" aria-controls="datatable"
-                                                    rowspan="1" colspan="1" aria-sort="ascending"
-                                                    aria-label="Name: activate to sort column descending"
-                                                    style="width: 144.333px;">Name</th>
-                                                <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1"
-                                                    colspan="1" aria-label="Position: activate to sort column ascending"
-                                                    style="width: 238.333px;">Position</th>
-                                                <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1"
-                                                    colspan="1" aria-label="Office: activate to sort column ascending"
-                                                    style="width: 102.333px;">Office</th>
-                                                <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1"
-                                                    colspan="1" aria-label="Age: activate to sort column ascending"
-                                                    style="width: 49.3333px;">Age</th>
-                                                <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1"
-                                                    colspan="1"
-                                                    aria-label="Start date: activate to sort column ascending"
-                                                    style="width: 99.3333px;">Start date</th>
-                                                <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1"
-                                                    colspan="1" aria-label="Salary: activate to sort column ascending"
-                                                    style="width: 75px;">Salary</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr role="row" class="odd">
-                                                <td class="sorting_1">Cara Stevens</td>
-                                                <td>Sales Assistant</td>
-                                                <td>New York</td>
-                                                <td>46</td>
-                                                <td>2011/12/06</td>
-                                                <td>$145,600</td>
-                                            </tr>
-                                            <tr role="row" class="even">
-                                                <td class="sorting_1">Cedric Kelly</td>
-                                                <td>Senior Javascript Developer</td>
-                                                <td>Edinburgh</td>
-                                                <td>22</td>
-                                                <td>2012/03/29</td>
-                                                <td>$433,060</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-5">
-                                    <div class="dataTables_info" id="datatable_info" role="status" aria-live="polite">
-                                        Showing 1 to 10 of 57 entries</div>
-                                </div>
-                                <div class="col-sm-7">
-                                    <div class="dataTables_paginate paging_simple_numbers" id="datatable_paginate">
-                                        <ul class="pagination">
-                                            <li class="paginate_button previous disabled" id="datatable_previous"><a
-                                                    href="#" aria-controls="datatable" data-dt-idx="0"
-                                                    tabindex="0">Previous</a></li>
-                                            <li class="paginate_button active"><a href="#" aria-controls="datatable"
-                                                    data-dt-idx="1" tabindex="0">1</a></li>
-                                            <li class="paginate_button next" id="datatable_next"><a href="#"
-                                                    aria-controls="datatable" data-dt-idx="7" tabindex="0">Next</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
+            <div class="x_content">
+                <div id="datatable_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <table id="datatable" class="table table-striped table-bordered dataTable no-footer"
+                                role="grid" aria-describedby="datatable_info">
+                                <thead>
+                                    <tr role="row">
+                                        <th>No</th>
+                                        <th>Nama</th>
+                                        <th>Username</th>
+                                        <th>Hak Akses</th>
+                                        <th>Status</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                            </table>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <div class="col-md-12 col-sm-12 col-xs-12">
-                <div class="x_panel">
-                    <div class="x_title">
-                        <h2>KeyTable example <small>Users</small></h2>
-                        <ul class="nav navbar-right panel_toolbox">
-                            <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                                    aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="#">Settings 1</a>
-                                    </li>
-                                    <li><a href="#">Settings 2</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li><a class="close-link"><i class="fa fa-close"></i></a>
-                            </li>
-                        </ul>
-                        <div class="clearfix"></div>
-                    </div>
-                    <div class="x_content">
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <div class="card-box table-responsive">
-                                    <p class="text-muted font-13 m-b-30">
-                                        KeyTable provides Excel like cell navigation on any table. Events (focus, blur,
-                                        action etc) can be assigned to individual cells, columns, rows or all cells.
-                                    </p>
-
-                                    <div id="datatable-keytable_wrapper"
-                                        class="dataTables_wrapper form-inline dt-bootstrap no-footer">
-                                        <div class="row">
-                                            <div class="col-sm-6">
-                                                <div class="dataTables_length" id="datatable-keytable_length">
-                                                    <label>Show <select name="datatable-keytable_length"
-                                                            aria-controls="datatable-keytable"
-                                                            class="form-control input-sm">
-                                                            <option value="10">10</option>
-                                                            <option value="25">25</option>
-                                                            <option value="50">50</option>
-                                                            <option value="100">100</option>
-                                                        </select> entries</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-6">
-                                                <div id="datatable-keytable_filter" class="dataTables_filter">
-                                                    <label>Search:<input type="search" class="form-control input-sm"
-                                                            placeholder="" aria-controls="datatable-keytable"></label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-sm-12">
-                                                <div
-                                                    style="position: absolute; height: 1px; width: 0px; overflow: hidden;">
-                                                    <input type="text" tabindex="0">
-                                                </div>
-                                                <table id="datatable-keytable"
-                                                    class="table table-striped table-bordered dataTable no-footer"
-                                                    role="grid" aria-describedby="datatable-keytable_info"
-                                                    style="position: relative;">
-                                                    <thead>
-                                                        <tr role="row">
-                                                            <th class="sorting_asc" tabindex="0"
-                                                                aria-controls="datatable-keytable" rowspan="1"
-                                                                colspan="1" aria-sort="ascending"
-                                                                aria-label="Name: activate to sort column descending"
-                                                                style="width: 144.333px;">Name</th>
-                                                            <th class="sorting" tabindex="0"
-                                                                aria-controls="datatable-keytable" rowspan="1"
-                                                                colspan="1"
-                                                                aria-label="Position: activate to sort column ascending"
-                                                                style="width: 238.333px;">Position</th>
-                                                            <th class="sorting" tabindex="0"
-                                                                aria-controls="datatable-keytable" rowspan="1"
-                                                                colspan="1"
-                                                                aria-label="Office: activate to sort column ascending"
-                                                                style="width: 102.333px;">Office</th>
-                                                            <th class="sorting" tabindex="0"
-                                                                aria-controls="datatable-keytable" rowspan="1"
-                                                                colspan="1"
-                                                                aria-label="Age: activate to sort column ascending"
-                                                                style="width: 49.3333px;">Age</th>
-                                                            <th class="sorting" tabindex="0"
-                                                                aria-controls="datatable-keytable" rowspan="1"
-                                                                colspan="1"
-                                                                aria-label="Start date: activate to sort column ascending"
-                                                                style="width: 99.3333px;">Start date</th>
-                                                            <th class="sorting" tabindex="0"
-                                                                aria-controls="datatable-keytable" rowspan="1"
-                                                                colspan="1"
-                                                                aria-label="Salary: activate to sort column ascending"
-                                                                style="width: 75px;">Salary</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr role="row" class="odd">
-                                                            <td class="sorting_1">Cara Stevens</td>
-                                                            <td>Sales Assistant</td>
-                                                            <td>New York</td>
-                                                            <td>46</td>
-                                                            <td>2011/12/06</td>
-                                                            <td>$145,600</td>
-                                                        </tr>
-                                                        <tr role="row" class="even">
-                                                            <td class="sorting_1">Cedric Kelly</td>
-                                                            <td>Senior Javascript Developer</td>
-                                                            <td>Edinburgh</td>
-                                                            <td>22</td>
-                                                            <td>2012/03/29</td>
-                                                            <td>$433,060</td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-sm-5">
-                                                <div class="dataTables_info" id="datatable-keytable_info" role="status"
-                                                    aria-live="polite">Showing 1 to 10 of 57 entries</div>
-                                            </div>
-                                            <div class="col-sm-7">
-                                                <div class="dataTables_paginate paging_simple_numbers"
-                                                    id="datatable-keytable_paginate">
-                                                    <ul class="pagination">
-                                                        <li class="paginate_button previous disabled"
-                                                            id="datatable-keytable_previous"><a href="#"
-                                                                aria-controls="datatable-keytable" data-dt-idx="0"
-                                                                tabindex="0">Previous</a></li>
-                                                        <li class="paginate_button active"><a href="#"
-                                                                aria-controls="datatable-keytable" data-dt-idx="1"
-                                                                tabindex="0">1</a></li>
-                                                        <li class="paginate_button "><a href="#"
-                                                                aria-controls="datatable-keytable" data-dt-idx="2"
-                                                                tabindex="0">2</a></li>
-                                                        <li class="paginate_button "><a href="#"
-                                                                aria-controls="datatable-keytable" data-dt-idx="3"
-                                                                tabindex="0">3</a></li>
-                                                        <li class="paginate_button "><a href="#"
-                                                                aria-controls="datatable-keytable" data-dt-idx="4"
-                                                                tabindex="0">4</a></li>
-                                                        <li class="paginate_button "><a href="#"
-                                                                aria-controls="datatable-keytable" data-dt-idx="5"
-                                                                tabindex="0">5</a></li>
-                                                        <li class="paginate_button "><a href="#"
-                                                                aria-controls="datatable-keytable" data-dt-idx="6"
-                                                                tabindex="0">6</a></li>
-                                                        <li class="paginate_button next" id="datatable-keytable_next"><a
-                                                                href="#" aria-controls="datatable-keytable"
-                                                                data-dt-idx="7" tabindex="0">Next</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </div>
 </div>
+
+<div class="row panel-akun-detail" style="display: none;">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h2>Edit Akun</h2>
+                <ul class="nav navbar-right panel_toolbox">
+                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
+                    <li><a class="close-link"><i class="fa fa-close"></i></a></li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+                <br>
+                <form id="form_1" class="form-horizontal form-label-left" data-parsley-validate="" novalidate="">
+                    <input type="hidden" value="">
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Nama <span
+                                class="required restrict">*</span></label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                            <input name="nama" type="text" class="form-control" placeholder="Nama" required=""
+                                onchange="changeTitlePanel('panel_title_2', 'Edit akun: ' + this.value)" value="Mifta"
+                                fdprocessedid="v88vpv">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Alamat </label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                            <textarea name="alamat" class="form-control" rows="3" placeholder="Alamat"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">No HP </label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                            <input name="nohp" type="text" class="form-control" placeholder="No HP" value=""
+                                fdprocessedid="lnj4v">
+                        </div>
+                    </div>
+                    <div class="form-group restrict">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Username <span
+                                class="required restrict">*</span></label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                            <input id="add_username" name="username" type="text" class="form-control"
+                                placeholder="Username" required=""
+                                onkeyup="((el)=&gt;{ el.value = el.value.toLowerCase(); })(this)" value="mita"
+                                disabled="" fdprocessedid="9z9xx">
+                        </div>
+                    </div>
+                    <div class="form-group restrict">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Password <span
+                                class="required restrict">*</span></label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                            <div class="input-group">
+                                <input id="password" name="password" type="password" class="form-control"
+                                    placeholder="Password" required="" value="827ccb0eea8a706c4c34a16891f84e7b"
+                                    fdprocessedid="wswhv">
+                                <span class="input-group-btn">
+                                    <i class="fa fa-eye" id="togglePassword"
+                                        style="height: 30px; width: auto; font-size: 25px; margin: 5px;"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Level Akses <span
+                                class="required restrict">*</span></label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                            <select id="level_akses" name="level_akses" class="select2_single form-control"
+                                tabindex="-1" required="">
+                                <option value="0">Admin Super</option>
+                                <option value="1" selected="selected">Admin</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <br>
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Foto Profil</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                            <form action="/file-upload" class="dropzone" id="my-awesome-dropzone"></form>
+                        </div>
+                    </div>
+
+                    <div class="ln_solid"></div>
+                    <div class="form-group restrict">
+                        <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3">
+                            <button type="submit" class="btn btn-success" fdprocessedid="5g6m6f">Simpan</button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{#section 'script'}}
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://cdn.datatables.net/2.3.5/js/dataTables.js"></script>
+
+<!-- Init Script -->
+<script>
+    $(function () {
+        // var token = "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImptcyIsImV4cCI6MTc2MzUzMzY5NX0.3Bxd--jkjJQ1SeXtJJmJKOAO5J0Mch37UfAeUYAQlnbDGzaCsLuHAcS16PwLQadYMpDWXhFu4YyEm6jsMCdatQ"
+
+        // const config = {
+        //     headers: { Authorization: `Bearer ${token}` }
+        // };
+
+        // const bodyParameters = {
+        //     key: "value"
+        // };
+
+        // axios.post(
+        //     'https://lapak.indesc.com/api/user',
+        //     bodyParameters,
+        //     config
+        // ).then(console.log).catch(console.log);}
+
+        var data = [{
+            "id": "686a4ea6c7b15b29d98c7528",
+            "name": "Developer",
+            "phone": "+62857 9337 5750",
+            "address": "Tasikmalaya",
+            "photo": "/api/bucket/68e87547bc6dc6009507a525",
+            "username": "jms",
+            "privilege": "Super Admin",
+            "active": true
+        },
+        {
+            "id": "686bc8ecc66b3367c4f37a0f",
+            "name": "Tester",
+            "photo": "/api/bucket/68e87547bc6dc6009507a525",
+            "username": "tester",
+            "privilege": "Admin",
+            "active": true
+        }]
+        // Merge with global DataTable options if available
+        var dt_options = $.extend(true, {},
+            typeof globalDTOptions !== 'undefined' ? globalDTOptions : {},
+            {
+                "data": data,
+                "columns": [
+                    {
+                        "data": null,
+                        "render": function (data, type, row, meta) {
+                            return meta.row + 1; // Row number starting from 1
+                        }
+                    },
+                    { "data": "name" },
+                    { "data": "username" },
+                    { "data": "privilege" },
+                    {
+                        "data": "active",
+                        "render": function (data, type, row) {
+                            return data ? '<span class="badge badge-success">Aktif</span>' : '<span class="badge badge-danger">Nonaktif</span>';
+                        }
+                    },
+                    {
+                        "data": null,
+                        "orderable": false,
+                        "render": function (data, type, row) {
+                            var activeBtn = row.active ?
+                                '<button class="btn btn-sm btn-warning btnAkunActiveCtrl" data-id="' + row.id + '">Nonaktifkan</button>' :
+                                '<button class="btn btn-sm btn-success btnAkunActiveCtrl" data-id="' + row.id + '">Aktifkan</button>';
+
+                            return '<div class="btn-group">' +
+                                '<button class="btn btn-sm btn-primary btnAkunEdit" data-id="' + row.id + '">Edit</button>' +
+                                activeBtn +
+                                '</div>';
+                        }
+                    }
+                ],
+                "columnDefs": [
+                    {
+                        "defaultContent": "-",
+                        "targets": "_all"
+                    }
+                ],
+                "responsive": true,
+                "processing": true,
+                "drawCallback": function (settings) {
+                    // Reinitialize event handlers after redraw
+                    initializeActionButtons();
+                }
+            }
+        );
+
+        // Initialize DataTable
+        var dt = $('#datatable').DataTable(dt_options);
+
+        // Function to initialize action buttons
+        function initializeActionButtons() {
+            // Edit button click handler
+            $('.btnAkunEdit').off('click').on('click', function (e) {
+                e.preventDefault();
+                var id = $(this).data('id');
+                var rowData = dt.row($(this).closest('tr')).data();
+
+                // Populate form with data
+                $('input[name="nama"]').val(rowData.name);
+                $('textarea[name="alamat"]').val(rowData.address || '');
+                $('input[name="nohp"]').val(rowData.phone || '');
+                $('input[name="username"]').val(rowData.username);
+                $('#level_akses').val(rowData.privilege === 'Super Admin' ? '0' : '1').trigger('change');
+
+                // Show edit panel
+                $('.panel-akun-detail').show();
+
+                console.log('Edit account:', rowData);
+            });
+
+            // Active/Inactive toggle button click handler
+            $('.btnAkunActiveCtrl').off('click').on('click', function (e) {
+                e.preventDefault();
+                var id = $(this).data('id');
+                var rowData = dt.row($(this).closest('tr')).data();
+                var action = rowData.active ? 'nonaktifkan' : 'aktifkan';
+
+                if (confirm('Apakah Anda yakin ingin ' + action + ' akun ini?')) {
+                    // Here you would typically make an API call to update the status
+                    console.log('Toggle active status for account:', rowData);
+
+                    // For demo purposes, update the data locally and redraw
+                    rowData.active = !rowData.active;
+                    dt.row($(this).closest('tr')).data(rowData).draw();
+                }
+            });
+        }
+
+        // Initialize action buttons on first load
+        initializeActionButtons();
+
+    });
+</script>
+
+<!-- Action Script -->
+<script>
+    $(function () {
+        $(".btn-tambah-akun").on("click", function (e) {
+            e.preventDefault();
+
+            // Clear form for new account
+            $('#form_1')[0].reset();
+            $('input[name="username"]').prop('disabled', false);
+            $('.x_title h2').text('Tambah Akun Baru');
+
+            // Show add/edit panel
+            $(".panel-akun-detail").show();
+        });
+
+        // Close panel button
+        $(".close-link").on("click", function (e) {
+            e.preventDefault();
+            $(".panel-akun-detail").hide();
+        });
+
+        // Form submission handler
+        $('#form_1').on('submit', function (e) {
+            e.preventDefault();
+
+            var formData = {
+                nama: $('input[name="nama"]').val(),
+                alamat: $('textarea[name="alamat"]').val(),
+                nohp: $('input[name="nohp"]').val(),
+                username: $('input[name="username"]').val(),
+                password: $('input[name="password"]').val(),
+                level_akses: $('#level_akses').val()
+            };
+
+            console.log('Form submitted:', formData);
+
+            // Here you would typically make an API call to save the data
+            alert('Data berhasil disimpan! (Demo mode)');
+
+            // Hide the panel
+            $(".panel-akun-detail").hide();
+
+            // Optionally refresh the DataTable
+            // dt.ajax.reload();
+        });
+    });
+</script>
+{{/section}}

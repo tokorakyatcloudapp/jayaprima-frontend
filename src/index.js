@@ -55,8 +55,10 @@ app.use(unexpectedErrorHandler()); // handle 500 error handler
 // Start server
 app.listen(PORT, () => {
     console.log(`🚀 Server is running on port ${PORT}`);
-    console.log(`🔗 View base URL: ${config.VIEW_HOST}${PORT}`);
-    console.log(`📍 Test check: ${config.VIEW_HOST}${PORT}/test`);
+    // Ensure the host includes the protocol (e.g. http://localhost)
+    // and log with a colon before the port so the URL is valid.
+    console.log(`🔗 View base URL: ${config.VIEW_HOST}:${PORT}`);
+    console.log(`📍 Test check: ${config.VIEW_HOST}:${PORT}/test`);
 });
 
 module.exports = app;

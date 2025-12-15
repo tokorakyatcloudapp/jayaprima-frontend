@@ -13,13 +13,11 @@ module.exports = () => {
         };
 
         try {
-            const response = await axios.get(data.api_host + '/api/info');
+            const response = await axios.get(config.API_HOST + '/api/info');
             data.logo = config.API_HOST + response.data.logo;
             data.name = response.data.name;
             res.render('login', data);
         } catch (e) {
-            data.message = 'Server Unexpected Error :(';
-            data.stack = config.MODE == 'development' ? e.stack : undefined;
             data.logo = config.VIEW_HOST +":"+ config.VIEW_PORT+"/images/logo.png";
             data.name = "Toko Rakyat";
             res.render('login', data);
